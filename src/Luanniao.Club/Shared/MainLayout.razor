@@ -6,20 +6,14 @@
 @using LuanNiao.Blazor.Component.Antd.Icons
 @using LuanNiao.Blazor.Component.Antd.Tooltip
 @using LuanNiao.Blazor.Component.Antd.Slider
-@using LuanNiao.Blazor.Component.Antd.Grid
+@using LuanNiao.Blazor.Component.Antd.Grid 
 
 <LNLayout>
     <Sider CStyle="overflow:auto;height:100%;position:fixed;left:0px;" @ref="SiderInstance">
         <div style="height: 32px; background: rgba(255, 255, 255, 0.2); margin: 16px;" />
-        <InlineMenu Theme="MenuBase.MenuTheme.Dark" DefaultSelectedKeys="@(new string[]{"home"})">
-            @if (SiderInstance.Collapsed)
-            {
-                <CollapsedMenuItems></CollapsedMenuItems>
-            }
-            else
-            {
-                <OpenStatusMenuItems></OpenStatusMenuItems>
-            }
+        <InlineMenu Theme="MenuBase.MenuTheme.Dark" DefaultSelectedKeys="@(new string[]{"icons"})">
+             
+                <MenuItems SiderInstance="@SiderInstance"></MenuItems> 
         </InlineMenu>
     </Sider>
     <LNLayout CStyle="@_layoutStyle" ClassName="site-layout" @ref="_rightContent">
@@ -29,8 +23,7 @@
                 <div @onclick="@(()=>Click())">
                     <MenuUnfoldOutlined ClassName="trigger"></MenuUnfoldOutlined>
                 </div>
-                </Col>
-
+                </Col> 
             </Row>
 
         </Header>
@@ -68,6 +61,8 @@
         _layoutStyle = SiderInstance.Collapsed ? "margin-left:80px;" : "margin-left:200px;";
         this.StateHasChanged();
     }
+
+     
 
 }
 <style>
