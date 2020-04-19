@@ -4,7 +4,8 @@
 @using LuanNiao.Blazor.Component.Antd.Icons
 @using LuanNiao.Blazor.Component.Antd.Tooltip
 @using LuanNiao.Blazor.Component.Antd.Slider
-@using LuanNiao.Blazor.Component.Antd.Grid 
+@using LuanNiao.Blazor.Component.Antd.Grid
+@using static LuanNiao.Blazor.Core.Translater
 
 <MenuItem Key="home">
 
@@ -12,7 +13,7 @@
         {*@
     <LNTooltip OverlayStyle="margin-left:35px" Placement="LuanNiao.Blazor.Component.Antd.PlacementType.Right">
         <Title>
-            <span>Home</span>
+            <span>@Tr("home")</span>
         </Title>
         <ChildContent>
             @if (SiderInstance.Collapsed)
@@ -22,7 +23,7 @@
             else
             {
                 <HomeOutlined />
-                <span>Home</span>
+                <span>@Tr("home")</span>
             }
         </ChildContent>
     </LNTooltip>
