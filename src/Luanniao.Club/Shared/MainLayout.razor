@@ -1,40 +1,22 @@
 ﻿@inherits LayoutComponentBase
 
+@using Luanniao.Club.Shared
+
 @using LuanNiao.Blazor.Component.Antd.Layout
 @using LuanNiao.Blazor.Component.Antd.Menu
-@using LuanNiao.Blazor.Component.Antd
-@using LuanNiao.Blazor.Component.Antd.Icons
-@using LuanNiao.Blazor.Component.Antd.Tooltip
-@using LuanNiao.Blazor.Component.Antd.Slider
-@using LuanNiao.Blazor.Component.Antd.Grid
+
 
 <LNLayout>
-    <Sider CStyle="overflow:auto;height:100%;position:fixed;left:0px;" @ref="SiderInstance">
+    <Sider CStyle="overflow:auto;height:100%;position:fixed;left:0px;" @ref="_siderInstance">
         <div style="height: 32px; background: rgba(255, 255, 255, 0.2); margin: 16px;" />
         <InlineMenu Theme="MenuBase.MenuTheme.Dark" DefaultSelectedKeys="@(new string[]{"icons"})">
-
-            <MenuItems SiderInstance="@SiderInstance"></MenuItems>
+            <MenuItems SiderInstance="@_siderInstance"></MenuItems>
         </InlineMenu>
     </Sider>
     <LNLayout CStyle="@_layoutStyle" ClassName="site-layout" @ref="_rightContent">
-        <Header ClassName="site-layout-background" CStyle="padding: 0;">
-            <Row>
-                <Col Span="1">
-                <div @onclick="@(()=>Click())">
-                    <MenuUnfoldOutlined ClassName="trigger"></MenuUnfoldOutlined>
-                </div>
-                </Col>
-
-                <Col Span="1">
-                <div @onclick="@(()=>Click1())">
-                    <SketchOutlined></SketchOutlined>
-                </div>
-                </Col>
-            </Row>
-
-        </Header>
+        <MainHeader SiderInstance="@_siderInstance" RightContent="@_rightContent"></MainHeader>
         <Content CStyle="margin:24px 16px 0px; overflow:initial;">
-            <div class="site-layout-background" style="padding: 24px;text-align:center;min-height:100%;">
+            <div class="site-layout-background" style="padding: 24px;text-align:center;min-height:500px;">
                 @Body
             </div>
         </Content>
@@ -54,27 +36,19 @@
 
 @code{
 
-    public Sider SiderInstance { get; set; }
+    private Sider _siderInstance;
     private string _layoutStyle = "margin-left:200px;";
     private LNLayout _rightContent = null;
 
-
-
-    public void Click()
+    protected override void OnInitialized()
     {
+        base.OnInitialized();
+        LuanNiao.Blazor.Core.Translater.CultureChanged += (info) =>
+        {
+            this.StateHasChanged();
+        };
+    }
 
-        SiderInstance.InverseCollapseStatus();
-        _rightContent.StyleHelper.RemoveCustomStyle("margin-left");
-        _layoutStyle = SiderInstance.Collapsed ? "margin-left:80px;" : "margin-left:200px;";
-        this.StateHasChanged();
-    }
-    int i = 0;
-    public void Click1()
-    {
-        i++;
-        LuanNiao.Blazor.Core.Translater.ConvertTo(i % 2 == 0 ? "en" : "cn");
-        this.StateHasChanged();
-    }
 
 }
 <style>

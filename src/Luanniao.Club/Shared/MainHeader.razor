@@ -1,0 +1,63 @@
+﻿
+@using LuanNiao.Blazor.Component.Antd
+@using LuanNiao.Blazor.Component.Antd.Layout
+@using LuanNiao.Blazor.Component.Antd.Icons 
+@using LuanNiao.Blazor.Component.Antd.Grid
+@using LuanNiao.Blazor.Component.Antd.Dropdown
+@using LuanNiao.Blazor.Component.Antd.Menu
+
+<Header ClassName="site-layout-background" CStyle="padding: 0;">
+    <Row>
+        <Col Span="1">
+        <div @onclick="@(()=>Click())">
+            <MenuUnfoldOutlined ClassName="trigger"></MenuUnfoldOutlined>
+        </div>
+        </Col>
+        <Col Span="21">
+
+        </Col>
+        <Col Span="1">
+        <LNDropdown Theme="DropdownTheme.Button">
+            <ChildContent>
+                @((_currentLanguage=="en"?"English":"中文")) <DownOutlined />
+            </ChildContent>
+            <Overlay>
+                <DropdownMenu OnSelect="@LanguageSelected">
+                    <MenuItem Key="cn">中文</MenuItem>
+                    <MenuItem Key="en">English</MenuItem>
+                </DropdownMenu>
+            </Overlay>
+        </LNDropdown>
+        </Col>
+    </Row>
+
+</Header>
+
+@code{
+
+    [Parameter]
+    public Sider SiderInstance { get; set; }
+    private string _layoutStyle = "margin-left:200px;";
+    [Parameter]
+    public LNLayout RightContent { get; set; }
+
+    private string _currentLanguage = "en";
+
+    public void LanguageSelected(MenuBase menu, List<string> items)
+    {
+        _currentLanguage = items[0];
+        LuanNiao.Blazor.Core.Translater.ConvertTo(_currentLanguage);
+        this.StateHasChanged();
+    }
+
+
+
+    public void Click()
+    {
+
+        SiderInstance.InverseCollapseStatus();
+        RightContent.StyleHelper.RemoveCustomStyle("margin-left");
+        _layoutStyle = SiderInstance.Collapsed ? "margin-left:80px;" : "margin-left:200px;";
+        this.StateHasChanged();
+    }
+}
