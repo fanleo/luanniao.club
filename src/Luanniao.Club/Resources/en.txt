@@ -8,10 +8,5 @@
 "menu":"Menu",
 "radio":"Radio",
 "slider":"Slider",
-"tooltip":"Tooltip",
-"primary":"Primary",
-"default":"Default",
-"dashed":"Dashed",
-"link":"Link",
-"btn_Title":"Base Operation"
+"tooltip":"Tooltip"
 }

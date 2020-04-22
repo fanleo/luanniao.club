@@ -1,7 +1,23 @@
 ﻿@layout MainLayout
-@page "/" 
+@page "/"
+@inject IJSRuntime _jsRT
 
-<h3>Index</h3> 
-@code {
+<div id="test-editormd-view">
+    <textarea style="display:none;" name="test-editormd-markdown-doc">      
+    
+# luanniao.club
+This is  source code of luanniao.club, use luanniao.blazor.component.antd
+ 
+            </textarea>
+</div>
 
+
+@code{
+
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+        _jsRT.InvokeVoidAsync("ShowMD", "test-editormd-view");
+    }
 }
