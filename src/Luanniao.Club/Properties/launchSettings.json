@@ -5,8 +5,7 @@
   },
   "profiles": {
     "Luanniao.Club": {
-      "commandName": "Project",
-      "launchBrowser": true,
+      "commandName": "Project", 
       "applicationUrl": "http://localhost:5000",
       "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",
       "environmentVariables": {

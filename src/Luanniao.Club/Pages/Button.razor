@@ -1,0 +1,47 @@
+﻿@layout MainLayout
+@page "/button"
+
+@using LuanNiao.Blazor.Component.Antd.Grid
+@using LuanNiao.Blazor.Component.Antd.Card
+@using LuanNiao.Blazor.Component.Antd.Button
+@using static LuanNiao.Blazor.Core.Translater
+
+    <Row Gutter="new MarginGutter() {  Vertial=10}">
+        <LuanNiao.Blazor.Component.Antd.Grid.Col Span="24">
+            <LNCard>
+                <Title>
+                    @Tr("btn_Title")
+                </Title>
+                <ChildContent>
+                    <LNButton Type="LNButton.BType.Primary">@Tr("primary")</LNButton>
+                    <LNButton>@Tr("default")</LNButton>
+                    <LNButton Type="LNButton.BType.Dashed">@Tr("dashed")</LNButton>
+                    <LNButton Type="LNButton.BType.Link">@Tr("link")</LNButton>
+                </ChildContent>
+            </LNCard>
+        </LuanNiao.Blazor.Component.Antd.Grid.Col>
+
+        <LuanNiao.Blazor.Component.Antd.Grid.Col Span="24">
+            <LNCard>
+                <Title>
+                    @Tr("btn_Title")
+                </Title>
+                <ChildContent>
+                    <LNButton Type="LNButton.BType.Primary">@Tr("primary")</LNButton>
+                    <LNButton>@Tr("default")</LNButton>
+                    <LNButton Type="LNButton.BType.Dashed">@Tr("dashed")</LNButton>
+                    <LNButton Type="LNButton.BType.Link">@Tr("link")</LNButton>
+                </ChildContent>
+            </LNCard>
+        </LuanNiao.Blazor.Component.Antd.Grid.Col>
+    </Row>
+
+
+@code{
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        CultureChanged += (_) => { this.StateHasChanged(); };
+    }
+
+}

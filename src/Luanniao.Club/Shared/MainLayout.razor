@@ -1,4 +1,5 @@
 ﻿@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
 
 @using Luanniao.Club.Shared
 
@@ -9,12 +10,12 @@
 <LNLayout>
     <Sider CStyle="overflow:auto;height:100%;position:fixed;left:0px;" @ref="_siderInstance">
         <div style="height: 32px; background: rgba(255, 255, 255, 0.2); margin: 16px;" />
-        <InlineMenu Theme="MenuBase.MenuTheme.Dark" DefaultSelectedKeys="@(new string[]{"home"})">
+        <InlineMenu Theme="MenuBase.MenuTheme.Dark" DefaultSelectedKeys="@(new string[]{"home"})" OnSelect="MenuSelected">
             <MenuItems SiderInstance="@_siderInstance"></MenuItems>
         </InlineMenu>
     </Sider>
     <LNLayout CStyle="@_layoutStyle" ClassName="site-layout" @ref="_rightContent">
-        <MainHeader  @ref="_header" SiderInstance="@_siderInstance" ></MainHeader>
+        <MainHeader @ref="_header" SiderInstance="@_siderInstance"></MainHeader>
         <Content CStyle="margin:24px 16px 0px; overflow:initial;">
             <div class="site-layout-background" style="padding: 24px;text-align:center;min-height:500px;">
                 @Body
@@ -39,8 +40,25 @@
     private Sider _siderInstance;
     private string _layoutStyle = "margin-left:200px;";
     private LNLayout _rightContent = null;
+    private Dictionary<string, string> _pageInfo = new Dictionary<string, string>() {
+        { "home","/"},
+        { "button","/button"},
+
+    };
+
+
+
 
     private MainHeader _header = null;
+
+    public async void MenuSelected(MenuBase menu, List<string> keys)
+    {
+        if (keys.Count == 0 || !_pageInfo.ContainsKey(keys[0]) || _pageInfo[keys[0]] == null)
+        {
+            return;
+        } 
+        NavigationManager.NavigateTo(_pageInfo[keys[0]]);
+    }
 
     protected override void OnAfterRender(bool firstRender)
     {
@@ -53,7 +71,7 @@
             };
             _header.CollapsedStatusChange += () =>
             {
-                _rightContent.StyleHelper.RemoveCustomStyle("margin-left"); 
+                _rightContent.StyleHelper.RemoveCustomStyle("margin-left");
                 _layoutStyle = _siderInstance.Collapsed ? "margin-left:80px;" : "margin-left:200px;";
                 this.StateHasChanged();
             };

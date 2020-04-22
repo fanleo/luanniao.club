@@ -8,5 +8,10 @@
 "menu":"菜单",
 "radio":"单选",
 "slider":"滑动条",
-"tooltip":"提示工具"
+"tooltip":"提示工具",
+"primary":"主要",
+"default":"默认",
+"dashed":"虚线",
+"link":"超链接",
+"btn_Title":"基本操作"
 }
