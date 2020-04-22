@@ -9,12 +9,12 @@
 <LNLayout>
     <Sider CStyle="overflow:auto;height:100%;position:fixed;left:0px;" @ref="_siderInstance">
         <div style="height: 32px; background: rgba(255, 255, 255, 0.2); margin: 16px;" />
-        <InlineMenu Theme="MenuBase.MenuTheme.Dark" DefaultSelectedKeys="@(new string[]{"icons"})">
+        <InlineMenu Theme="MenuBase.MenuTheme.Dark" DefaultSelectedKeys="@(new string[]{"home"})">
             <MenuItems SiderInstance="@_siderInstance"></MenuItems>
         </InlineMenu>
     </Sider>
     <LNLayout CStyle="@_layoutStyle" ClassName="site-layout" @ref="_rightContent">
-        <MainHeader SiderInstance="@_siderInstance" RightContent="@_rightContent"></MainHeader>
+        <MainHeader  @ref="_header" SiderInstance="@_siderInstance" ></MainHeader>
         <Content CStyle="margin:24px 16px 0px; overflow:initial;">
             <div class="site-layout-background" style="padding: 24px;text-align:center;min-height:500px;">
                 @Body
@@ -40,14 +40,26 @@
     private string _layoutStyle = "margin-left:200px;";
     private LNLayout _rightContent = null;
 
-    protected override void OnInitialized()
+    private MainHeader _header = null;
+
+    protected override void OnAfterRender(bool firstRender)
     {
-        base.OnInitialized();
-        LuanNiao.Blazor.Core.Translater.CultureChanged += (info) =>
+        base.OnAfterRender(firstRender);
+        if (firstRender)
         {
-            this.StateHasChanged();
-        };
+            LuanNiao.Blazor.Core.Translater.CultureChanged += (info) =>
+            {
+                this.StateHasChanged();
+            };
+            _header.CollapsedStatusChange += () =>
+            {
+                _rightContent.StyleHelper.RemoveCustomStyle("margin-left"); 
+                _layoutStyle = _siderInstance.Collapsed ? "margin-left:80px;" : "margin-left:200px;";
+                this.StateHasChanged();
+            };
+        }
     }
+
 
 
 }

@@ -36,11 +36,9 @@
 @code{
 
     [Parameter]
-    public Sider SiderInstance { get; set; }
-    private string _layoutStyle = "margin-left:200px;";
-    [Parameter]
-    public LNLayout RightContent { get; set; }
+    public Sider SiderInstance { get; set; }  
 
+    internal Action CollapsedStatusChange;
     private string _currentLanguage = "en";
 
     public void LanguageSelected(MenuBase menu, List<string> items)
@@ -56,8 +54,7 @@
     {
 
         SiderInstance.InverseCollapseStatus();
-        RightContent.StyleHelper.RemoveCustomStyle("margin-left");
-        _layoutStyle = SiderInstance.Collapsed ? "margin-left:80px;" : "margin-left:200px;";
         this.StateHasChanged();
+        CollapsedStatusChange?.Invoke();
     }
 }
