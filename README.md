@@ -1,4 +1,4 @@
->>Tips:this page use the google translate, if you found the **bug** you can push PR if you want.
+>>Tips:this page use the google translate, if you found the **bug** you can push [PR](https://github.com/luanniao/luanniao.club/pulls) if you want.
 # LuanNiao Blazor Component Library
 LuanNiao Blazor component library is an ASP.NET Core Blazor component library developed ***based on*** the CSS style library of Antd V4 version.
 The goal of our library is to create a convenient and fast component library for small and medium-sized enterprises based on Antd's high reuse style and high compatibility.
