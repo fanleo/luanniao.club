@@ -54,11 +54,11 @@
 <MenuItem Key="avatar">
     <LNTooltip OverlayStyle="margin-left:35px" Placement="LuanNiao.Blazor.Component.Antd.PlacementType.Right">
         <Title>
-            <span>@Tr(e=>e=="en"?"avatar":"头像")</span>
+            <span>@Tr(e => e == "en" ? "avatar" : "头像")</span>
         </Title>
         <ChildContent>
             <SmileFilled />
-            <span>@Tr(e => e == "en"?"avatar":"头像")</span>
+            <span>@Tr(e => e == "en" ? "avatar" : "头像")</span>
         </ChildContent>
     </LNTooltip>
 </MenuItem>
@@ -132,6 +132,21 @@
         <ChildContent>
             <InfoCircleOutlined />
             <span>@Tr("tooltip")</span>
+        </ChildContent>
+    </LNTooltip>
+
+</MenuItem>
+
+
+
+<MenuItem Key="dropdown">
+    <LNTooltip OverlayStyle="margin-left:35px" Placement="LuanNiao.Blazor.Component.Antd.PlacementType.Right">
+        <Title>
+            <span>@Tr(e => e == "en" ? "dropdown" : "下拉菜单")</span>
+        </Title>
+        <ChildContent>
+            <DropboxCircleFilled />
+            <span>@Tr(e=>e=="en"?"dropdown":"下拉菜单")</span>
         </ChildContent>
     </LNTooltip>
 

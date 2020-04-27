@@ -11,7 +11,7 @@
     <Sider CStyle="overflow:auto;height:100%;position:fixed;left:0px;" @ref="_siderInstance" Collapsible="true">
         <div class="logo">
             <img src="/favicon.ico" style="    height: 32px;    width: 32px;" />
-            @(_siderInstance.Collapsed?"": "Luan Niao") 
+            @(_siderInstance.Collapsed?"": "Luan Niao")
         </div>
         <InlineMenu Theme="MenuBase.MenuTheme.Dark" DefaultSelectedKeys="@(new string[]{"home"})" OnSelect="MenuSelected">
             <MenuItems SiderInstance="@_siderInstance"></MenuItems>
@@ -52,6 +52,10 @@
         { "inputnumber","/inputnumber"},
         { "layout","/layout"},
         { "menu","/menu"},
+        { "radio","/radio"},
+        { "slider","/slider"},
+        { "tooltip","/tooltip"},
+        { "dropdown","/dropdown"},
 
     };
 
@@ -60,7 +64,7 @@
 
     private MainHeader _header = null;
 
-    public  void MenuSelected(MenuBase menu, List<string> keys)
+    public void MenuSelected(MenuBase menu, List<string> keys)
     {
         if (keys.Count == 0 || !_pageInfo.ContainsKey(keys[0]) || _pageInfo[keys[0]] == null)
         {
