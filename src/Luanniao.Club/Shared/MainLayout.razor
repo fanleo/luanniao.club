@@ -5,11 +5,14 @@
 
 @using LuanNiao.Blazor.Component.Antd.Layout
 @using LuanNiao.Blazor.Component.Antd.Menu
-
+@using static LuanNiao.Blazor.Core.Translater
 
 <LNLayout>
     <Sider CStyle="overflow:auto;height:100%;position:fixed;left:0px;" @ref="_siderInstance" Collapsible="true">
-        <div style="height: 32px; background: rgba(255, 255, 255, 0.2); margin: 16px;" />
+        <div class="logo">
+            <img src="/favicon.ico" style="    height: 32px;    width: 32px;" />
+            @(_siderInstance.Collapsed?"": "Luan Niao") 
+        </div>
         <InlineMenu Theme="MenuBase.MenuTheme.Dark" DefaultSelectedKeys="@(new string[]{"home"})" OnSelect="MenuSelected">
             <MenuItems SiderInstance="@_siderInstance"></MenuItems>
         </InlineMenu>
@@ -44,6 +47,7 @@
         { "home","/"},
         { "button","/button"},
         { "icons","/icons"},
+        { "grid","/grid"},
 
     };
 
@@ -87,7 +91,16 @@
         height: 32px;
         background: rgba(255, 255, 255, 0.2);
         margin: 16px;
+        font-size: 21px;
+        text-align: center;
+        background: -moz-radial-gradient(80% 20%,farthest-side, #313d4b, #cacaca);
+        background: -webkit-radial-gradient(80% 20%,farthest-side, #313d4b, #cacaca);
     }
+
+        .logo span {
+            color: hsl(200,75%,35%);
+            text-shadow: 0 0 1px currentColor, -1px -1px 1px hsl(200,75%,45%), 0 -1px 1px hsl(200,75%,40%), -1px 0 1px hsl(200,75%,35%), 1px -1px 1px hsl(200,75%,35%), 1px 0 1px hsl(200,75%,30%), 1px 1px 1px hsl(200,75%,30%), 0 1px 1px hsl(200,75%,30%), -1px 1px 1px hsl(200,75%,30%), -2px -2px 1px hsl(200,75%,75%), -2px -1px 1px hsl(200,75%,60%), -2px 0 1px hsl(200,75%,60%), -1px -2px 1px hsl(200,75%,50%), 0 -2px 1px hsl(200,75%,50%), 1px -2px 1px hsl(200,75%,50%), 2px -2px 1px hsl(200,75%,35%), 2px -1px 1px hsl(200,75%,35%), 2px 0 1px hsl(200,75%,30%), 2px 1px 1px hsl(200,75%,10%), 2px 2px 1px hsl(200,75%,10%), 1px 2px 1px hsl(200,75%,15%), 0 2px 1px hsl(200,75%,10%), -1px 2px 1px hsl(200,75%,20%), -2px 2px 1px hsl(200,75%,20%), -2px 1px 1px hsl(200,75%,10%), -3px -3px 1px #006, -2px -3px 1px #006, -1px -3px 1px #006, 0 -3px 1px #006, 1px -3px 1px #006, 2px -3px 1px #006, 3px -3px 1px #006, 3px -2px 1px #006, 3px -1px 1px #006, 3px 0 1px #006, 3px 1px 1px #006, 3px 2px 1px #006, 3px 3px 2px #006, 2px 3px 1px #006, 1px 3px 1px #006, 0 3px 1px #006, -1px 3px 1px #006, -2px 3px 1px #006, -3px 3px 1px #006, -3px 2px 1px #006, -3px 1px 1px #006, -3px 0 1px #006, -3px -1px 1px #006, -3px -2px 1px #006
+        }
 
     .site-layout .site-layout-background {
         background: #fff;

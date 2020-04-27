@@ -1,0 +1,77 @@
+﻿@layout MainLayout
+@page "/grid"
+
+@using LuanNiao.Blazor.Component.Antd.Grid
+@using LuanNiao.Blazor.Component.Antd.Card
+@using LuanNiao.Blazor.Component.Antd.Button
+@using LuanNiao.Blazor.Component.Antd.Icons
+@using static LuanNiao.Blazor.Core.Translater
+
+    <Row Gutter="new MarginGutter() {  Vertial=10, Horizontal=4}">
+
+        <LuanNiao.Blazor.Component.Antd.Grid.Col Span="24">
+            <LNCard>
+                <Title>
+                    @Tr((current) => current == "en"
+               ? "Base operation"
+               : "基本使用方式")
+                </Title>
+                <ChildContent>
+                    <Row CStyle="margin-top:10px">
+                        <Col Span="24" CStyle="background:rgba(0,146,255,.75);min-height:30px">col</Col>
+                    </Row>
+                    <Row CStyle="margin-top:10px">
+                        <Col Span="12" CStyle="background:rgba(0,146,255,.75);min-height:30px">col-12</Col>
+                        <Col Span="12" CStyle="background:#0092ff;min-height:30px">col-12</Col>
+                    </Row>
+                    <Row CStyle="margin-top:10px">
+                        <Col Span="8" CStyle="background:rgba(0,146,255,.75);min-height:30px">col-8</Col>
+                        <Col Span="8" CStyle="background:#0092ff;min-height:30px">col-8</Col>
+                        <Col Span="8" CStyle="background:rgba(0,146,255,.75);min-height:30px">col-8</Col>
+                    </Row>
+                    <Row CStyle="margin-top:10px">
+                        <Col Span="6" CStyle="background:rgba(0,146,255,.75);min-height:30px">col-6</Col>
+                        <Col Span="6" CStyle="background:#0092ff;min-height:30px">col-6</Col>
+                        <Col Span="6" CStyle="background:rgba(0,146,255,.75);min-height:30px">col-6</Col>
+                        <Col Span="6" CStyle="background:#0092ff;min-height:30px">col-6</Col>
+                    </Row>
+
+                </ChildContent>
+            </LNCard>
+        </LuanNiao.Blazor.Component.Antd.Grid.Col>
+
+        <LuanNiao.Blazor.Component.Antd.Grid.Col Span="24">
+            <LNCard>
+                <Title>
+                    @Tr((current) => current == "en"
+               ? "Grid gutter"
+               : "区块间隔")
+                </Title>
+                <ChildContent>
+                    <Row CStyle="margin-top:10px">
+                        <Col Span="24" CStyle="background:rgba(0,146,255,.75);min-height:30px">col</Col>
+                    </Row>
+                    <Row CStyle="margin-top:10px">
+                        <Col Span="12" CStyle="background:rgba(0,146,255,.75);min-height:30px">col-12</Col>
+                        <Col Span="12" CStyle="background:#0092ff;min-height:30px">col-12</Col>
+                    </Row>
+                    <Row CStyle="margin-top:10px">
+                        <Col Span="8" CStyle="background:rgba(0,146,255,.75);min-height:30px">col-8</Col>
+                        <Col Span="8" CStyle="background:#0092ff;min-height:30px">col-8</Col>
+                        <Col Span="8" CStyle="background:rgba(0,146,255,.75);min-height:30px">col-8</Col>
+                    </Row>
+                    <Row CStyle="margin-top:10px">
+                        <Col Span="6" CStyle="background:rgba(0,146,255,.75);min-height:30px">col-6</Col>
+                        <Col Span="6" CStyle="background:#0092ff;min-height:30px">col-6</Col>
+                        <Col Span="6" CStyle="background:rgba(0,146,255,.75);min-height:30px">col-6</Col>
+                        <Col Span="6" CStyle="background:#0092ff;min-height:30px">col-6</Col>
+                    </Row>
+
+                </ChildContent>
+            </LNCard>
+        </LuanNiao.Blazor.Component.Antd.Grid.Col>
+
+
+
+    </Row>
+
