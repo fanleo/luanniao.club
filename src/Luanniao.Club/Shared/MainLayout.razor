@@ -8,7 +8,7 @@
 
 
 <LNLayout>
-    <Sider CStyle="overflow:auto;height:100%;position:fixed;left:0px;" @ref="_siderInstance">
+    <Sider CStyle="overflow:auto;height:100%;position:fixed;left:0px;" @ref="_siderInstance" Collapsible="true">
         <div style="height: 32px; background: rgba(255, 255, 255, 0.2); margin: 16px;" />
         <InlineMenu Theme="MenuBase.MenuTheme.Dark" DefaultSelectedKeys="@(new string[]{"home"})" OnSelect="MenuSelected">
             <MenuItems SiderInstance="@_siderInstance"></MenuItems>
@@ -57,7 +57,7 @@
         if (keys.Count == 0 || !_pageInfo.ContainsKey(keys[0]) || _pageInfo[keys[0]] == null)
         {
             return;
-        } 
+        }
         NavigationManager.NavigateTo(_pageInfo[keys[0]]);
     }
 
@@ -70,7 +70,7 @@
             {
                 this.StateHasChanged();
             };
-            _header.CollapsedStatusChange += () =>
+            _siderInstance.CollapsedBtnClicked += () =>
             {
                 _rightContent.StyleHelper.RemoveCustomStyle("margin-left");
                 _layoutStyle = _siderInstance.Collapsed ? "margin-left:80px;" : "margin-left:200px;";

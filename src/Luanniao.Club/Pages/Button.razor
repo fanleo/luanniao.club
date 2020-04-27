@@ -8,12 +8,12 @@
 @using static LuanNiao.Blazor.Core.Translater
 
     <Row Gutter="new MarginGutter() {  Vertial=10, Horizontal=4}">
-        <LuanNiao.Blazor.Component.Antd.Grid.Col Span="24">
+        <LuanNiao.Blazor.Component.Antd.Grid.Col Span="12">
             <LNCard>
                 <Title>
                     @Tr((current) => current == "en"
-               ? "Base operation"
-               : "基本操作")
+               ? "Base"
+               : "基本")
                 </Title>
                 <ChildContent>
                     <LNButton Type="LNButton.BType.Primary">@Tr("primary")</LNButton>
@@ -28,25 +28,25 @@
             <LNCard>
                 <Title>
                     @Tr((current) => current == "en"
-               ? "Button Size"
-               : "按钮大小")
+               ? "Size"
+               : "大小")
                 </Title>
                 <ChildContent>
                     <LNButton Size="ComponentSize.Large" Type="LNButton.BType.Primary">
                         @Tr((current) => current == "en"
-                        ? "Large Button"
-                        : "大按钮")
+                        ? "Large"
+                        : "大")
                     </LNButton>
                     <LNButton Size="ComponentSize.Middle" Type="LNButton.BType.Primary">
                         @Tr((current) => current == "en"
-                       ? "Middle Button"
-                       : "普通按钮")
+                       ? "Middle"
+                       : "普通")
                     </LNButton>
                     <LNButton Size="ComponentSize.Small" Type="LNButton.BType.Primary">
 
                         @Tr((current) => current == "en"
-                       ? "Small Button"
-                       : "小按钮")
+                       ? "Small"
+                       : "小")
                     </LNButton>
                 </ChildContent>
             </LNCard>
