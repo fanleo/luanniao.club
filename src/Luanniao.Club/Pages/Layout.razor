@@ -1,0 +1,107 @@
+﻿@layout MainLayout
+@page "/layout"
+
+@using LuanNiao.Blazor.Component.Antd.Layout
+@using LuanNiao.Blazor.Component.Antd.Menu
+
+<LNLayout>
+    <Header>Header</Header>
+    <Content>Content</Content>
+    <Footer>Footer</Footer>
+</LNLayout>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<LNLayout>
+    <Header>Header</Header>
+    <LNLayout>
+        <Sider>Sider</Sider>
+        <Content>Content</Content>
+    </LNLayout>
+    <Footer>Footer</Footer>
+</LNLayout>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<LNLayout>
+    <Header>Header</Header>
+    <LNLayout>
+        <Content>Content</Content>
+        <Sider>Sider</Sider>
+    </LNLayout>
+    <Footer>Footer</Footer>
+</LNLayout>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<LNLayout>
+    <Sider>Sider</Sider>
+    <LNLayout>
+        <Header>Header</Header>
+        <Content>Content</Content>
+        <Footer>Footer</Footer>
+    </LNLayout>
+</LNLayout>
+
+ 
+
+
+
+
+<style>
+
+
+
+    .CodeBox .ant-layout-header {
+        background: #7dbcea;
+        color: #fff;
+    }
+    .CodeBox .ant-layout-footer {
+        background: #7dbcea;
+        color: #fff;
+    }
+
+    .CodeBox [data-theme="dark"] .ant-layout-header {
+        background: #6aa0c7;
+    }
+
+    .CodeBox [data-theme="dark"] .ant-layout-footer {
+        background: #6aa0c7;
+    }
+
+    .CodeBox .ant-layout-footer {
+        line-height: 1.5;
+    }
+
+    .CodeBox .ant-layout-sider {
+        background: #3ba0e9;
+        color: #fff;
+        line-height: 120px;
+    }
+
+    .CodeBox [data-theme="dark"] .ant-layout-sider {
+        background: #3499ec;
+    }
+
+    .CodeBox .ant-layout-content {
+        background: rgba(16, 142, 233, 1);
+        color: #fff;
+        min-height: 120px;
+        line-height: 120px;
+    }
+
+    .CodeBox [data-theme="dark"] .ant-layout-content {
+        background: #107bcb;
+    }
+ 
+</style>

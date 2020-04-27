@@ -8,283 +8,132 @@
 @using static LuanNiao.Blazor.Core.Translater
 
 <MenuItem Key="home">
-
-    @*@if (SiderInstance.Collapsed)
-        {*@
     <LNTooltip OverlayStyle="margin-left:35px" Placement="LuanNiao.Blazor.Component.Antd.PlacementType.Right">
         <Title>
             <span>@Tr("home")</span>
         </Title>
         <ChildContent>
-            @if (SiderInstance.Collapsed)
-            {
-                <HomeFilled />
-            }
-            else
-            {
-                <HomeOutlined />
-                <span>@Tr("home")</span>
-            }
+            <HomeOutlined />
+            <span>@Tr("home")</span>
         </ChildContent>
     </LNTooltip>
-
-    @*}
-        else
-        {
-            <HomeOutlined />
-            <span>Home</span>
-        }*@
 </MenuItem>
 <MenuItem Key="button">
-
-    @*@if (SiderInstance.Collapsed)
-        {*@
     <LNTooltip OverlayStyle="margin-left:35px" Placement="LuanNiao.Blazor.Component.Antd.PlacementType.Right">
         <Title>
             <span>@Tr("button")</span>
         </Title>
         <ChildContent>
-            @if (SiderInstance.Collapsed)
-            {
-                <BoldOutlined />
-            }
-            else
-            {
-                <BoldOutlined />
-                <span>@Tr("button")</span>
-            }
+            <BoldOutlined />
+            <span>@Tr("button")</span>
         </ChildContent>
     </LNTooltip>
-    @*}
-        else
-        {
-            <BoldOutlined />
-            <span>Button</span>
-        }*@
 </MenuItem>
 <MenuItem Key="grid">
-
-    @*@if (SiderInstance.Collapsed)
-        {*@
     <LNTooltip OverlayStyle="margin-left:35px" Placement="LuanNiao.Blazor.Component.Antd.PlacementType.Right">
         <Title>
             <span>@Tr("grid")</span>
         </Title>
         <ChildContent>
-            @if (SiderInstance.Collapsed)
-            {
-                <ColumnWidthOutlined />
-            }
-            else
-            {
-
-                <ColumnWidthOutlined />
-                <span>@Tr("grid")</span>
-            }
+            <ColumnWidthOutlined />
+            <span>@Tr("grid")</span>
         </ChildContent>
     </LNTooltip>
-    @*}
-        else
-        {
-
-            <ColumnWidthOutlined />
-            <span>Grid</span>
-        }*@
 </MenuItem>
 <MenuItem Key="icons">
-
-    @*@if (SiderInstance.Collapsed)
-        {*@
     <LNTooltip OverlayStyle="margin-left:35px" Placement="LuanNiao.Blazor.Component.Antd.PlacementType.Right">
         <Title>
             <span>@Tr("icons")</span>
         </Title>
         <ChildContent>
-            @if (SiderInstance.Collapsed)
-            {
-                <SmileFilled />
-            }
-            else
-            {
-                <SmileFilled />
-                <span>@Tr("icons")</span>
-            }
+            <SmileFilled />
+            <span>@Tr("icons")</span>
         </ChildContent>
     </LNTooltip>
-    @*}
-        else
-        {
+</MenuItem>
+<MenuItem Key="avatar">
+    <LNTooltip OverlayStyle="margin-left:35px" Placement="LuanNiao.Blazor.Component.Antd.PlacementType.Right">
+        <Title>
+            <span>@Tr(e=>e=="en"?"avatar":"头像")</span>
+        </Title>
+        <ChildContent>
             <SmileFilled />
-            <span>Icons</span>
-        }*@
+            <span>@Tr(e => e == "en"?"avatar":"头像")</span>
+        </ChildContent>
+    </LNTooltip>
 </MenuItem>
 <MenuItem Key="inputnumber">
-
-    @*@if (SiderInstance.Collapsed)
-        {*@
     <LNTooltip OverlayStyle="margin-left:35px" Placement="LuanNiao.Blazor.Component.Antd.PlacementType.Right">
         <Title>
             <span>@Tr("inputnumber")</span>
         </Title>
         <ChildContent>
-            @if (SiderInstance.Collapsed)
-            {
-                <RiseOutlined />
-            }
-            else
-            {
-
-                <RiseOutlined />
-                <span>@Tr("inputnumber")</span>
-            }
+            <RiseOutlined />
+            <span>@Tr("inputnumber")</span>
         </ChildContent>
     </LNTooltip>
-    @*}
-        else
-        {
-
-            <RiseOutlined />
-            <span>InputNumber</span>
-        }*@
 </MenuItem>
 
 <MenuItem Key="layout">
-    @*@if (SiderInstance.Collapsed)
-        {*@
     <LNTooltip OverlayStyle="margin-left:35px" Placement="LuanNiao.Blazor.Component.Antd.PlacementType.Right">
         <Title>
             <span>@Tr("layout")</span>
         </Title>
         <ChildContent>
-            @if (SiderInstance.Collapsed)
-            {
-                <BorderInnerOutlined />
-            }
-            else
-            {
-                <BorderInnerOutlined />
-                <span>@Tr("layout")</span>
-            }
+            <BorderInnerOutlined />
+            <span>@Tr("layout")</span>
         </ChildContent>
     </LNTooltip>
-    @*}
-        else
-        {
-            <BorderInnerOutlined />
-            <span>Layout</span>
-        }*@
 </MenuItem>
 
 
 <MenuItem Key="menu">
-    @*@if (SiderInstance.Collapsed)
-        {*@
     <LNTooltip OverlayStyle="margin-left:35px" Placement="LuanNiao.Blazor.Component.Antd.PlacementType.Right">
         <Title>
             <span>@Tr("menu")</span>
         </Title>
         <ChildContent>
-            @if (SiderInstance.Collapsed)
-            {
-                <MenuOutlined />
-            }
-            else
-            {
-                <MenuOutlined />
-                <span>@Tr("menu")</span>
-            }
+            <MenuOutlined />
+            <span>@Tr("menu")</span>
         </ChildContent>
     </LNTooltip>
-    @*}
-        else
-        {
-            <MenuOutlined />
-            <span>Menu</span>
-        }*@
 </MenuItem>
 
 <MenuItem Key="radio">
-    @*@if (SiderInstance.Collapsed)
-        {*@
     <LNTooltip OverlayStyle="margin-left:35px" Placement="LuanNiao.Blazor.Component.Antd.PlacementType.Right">
         <Title>
             <span>@Tr("radio")</span>
         </Title>
         <ChildContent>
-            @if (SiderInstance.Collapsed)
-            {
-                <SelectOutlined />
-            }
-            else
-            {
-                <SelectOutlined />
-                <span>@Tr("radio")</span>
-            }
+            <SelectOutlined />
+            <span>@Tr("radio")</span>
         </ChildContent>
     </LNTooltip>
-    @*}
-        else
-        {
-            <SelectOutlined />
-            <span>Radio</span>
-
-        }*@
 </MenuItem>
 
 <MenuItem Key="slider">
-    @*@if (SiderInstance.Collapsed)
-        {*@
     <LNTooltip OverlayStyle="margin-left:35px" Placement="LuanNiao.Blazor.Component.Antd.PlacementType.Right">
         <Title>
             <span>@Tr("slider")</span>
         </Title>
         <ChildContent>
-            @if (SiderInstance.Collapsed)
-            {
-                <LineOutlined />
-            }
-            else
-            {
-                <LineOutlined />
-                <span>@Tr("slider")</span>
-            }
+            <LineOutlined />
+            <span>@Tr("slider")</span>
         </ChildContent>
     </LNTooltip>
-    @*}
-        else
-        {
-            <LineOutlined />
-            <span>Slider</span>
-        }*@
 </MenuItem>
 
 
 <MenuItem Key="tooltip">
-    @*@if (SiderInstance.Collapsed)
-        {*@
     <LNTooltip OverlayStyle="margin-left:35px" Placement="LuanNiao.Blazor.Component.Antd.PlacementType.Right">
         <Title>
             <span>@Tr("tooltip")</span>
         </Title>
         <ChildContent>
-            @if (SiderInstance.Collapsed)
-            {
-                <InfoCircleOutlined />
-            }
-            else
-            {
-                <InfoCircleOutlined />
-                <span>@Tr("tooltip")</span>
-            }
+            <InfoCircleOutlined />
+            <span>@Tr("tooltip")</span>
         </ChildContent>
     </LNTooltip>
-    @*}
-        else
-        {
-
-            <InfoCircleOutlined />
-            <span>Tooltip</span>
-        }*@
 
 </MenuItem>
 

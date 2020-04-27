@@ -48,6 +48,9 @@
         { "button","/button"},
         { "icons","/icons"},
         { "grid","/grid"},
+        { "avatar","/avatar"},
+        { "inputnumber","/inputnumber"},
+        { "layout","/layout"},
 
     };
 
@@ -56,7 +59,7 @@
 
     private MainHeader _header = null;
 
-    public async void MenuSelected(MenuBase menu, List<string> keys)
+    public  void MenuSelected(MenuBase menu, List<string> keys)
     {
         if (keys.Count == 0 || !_pageInfo.ContainsKey(keys[0]) || _pageInfo[keys[0]] == null)
         {
