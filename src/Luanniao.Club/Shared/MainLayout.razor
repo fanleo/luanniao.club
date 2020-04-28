@@ -13,7 +13,7 @@
             <img src="/favicon.ico" style="    height: 32px;    width: 32px;" />
             @(_siderInstance.Collapsed?"": "Luan Niao")
         </div>
-        <InlineMenu Theme="MenuBase.MenuTheme.Dark" DefaultSelectedKeys="@(new string[]{"home"})" OnSelect="MenuSelected">
+        <InlineMenu CStyle="margin-bottom:48px;"  Theme="MenuBase.MenuTheme.Dark" DefaultSelectedKeys="@(new string[]{"home"})" OnSelect="MenuSelected">
             <MenuItems SiderInstance="@_siderInstance"></MenuItems>
         </InlineMenu>
     </Sider>
@@ -56,6 +56,15 @@
         { "slider","/slider"},
         { "tooltip","/tooltip"},
         { "dropdown","/dropdown"},
+        { "badge","/badge"},
+        { "breadcrumb","/breadcrumb"},
+        { "card","/card"},
+        { "checkbox","/checkbox"},
+        { "divider","/divider"},
+        { "drawer","/drawer"},
+        { "message","/message"},
+        { "spin","/spin"},
+        { "translater","/translater"},
 
     };
 

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Text;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using LuanNiao.Blazor.Component.Antd;
 using LuanNiao.Blazor.Core;
 using Luanniao.Club.Properties;
 
@@ -22,7 +23,7 @@ namespace Luanniao.Club
             });
             Translater.ConvertTo("en");
             //builder.Services.AddSingleton(new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-            builder.Services.AddLuanNiaoBlazor();
+            builder.Services.AddLuanNiaoBlazorAntdExtensions();
             await builder.Build().RunAsync();
         }
     }
