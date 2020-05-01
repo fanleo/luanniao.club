@@ -6,6 +6,11 @@
 @using LuanNiao.Blazor.Component.Antd.Layout
 @using LuanNiao.Blazor.Component.Antd.Menu
 @using static LuanNiao.Blazor.Core.Translater
+@using LuanNiao.Blazor.Component.Antd.Tooltip
+
+
+<LNTooltipStub></LNTooltipStub>
+<LNMessageStub></LNMessageStub>
 
 <LNLayout>
     <Sider CStyle="overflow:auto;height:100%;position:fixed;left:0px;" @ref="_siderInstance" Collapsible="true">
@@ -13,7 +18,7 @@
             <img src="/favicon.ico" style="    height: 32px;    width: 32px;" />
             @(_siderInstance.Collapsed?"": "Luan Niao")
         </div>
-        <InlineMenu CStyle="margin-bottom:48px;"  Theme="MenuBase.MenuTheme.Dark" DefaultSelectedKeys="@(new string[]{"home"})" OnSelect="MenuSelected">
+        <InlineMenu CStyle="margin-bottom:48px;" Theme="MenuBase.MenuTheme.Dark" DefaultSelectedKeys="@(new string[]{"home"})" OnSelect="MenuSelected">
             <MenuItems SiderInstance="@_siderInstance"></MenuItems>
         </InlineMenu>
     </Sider>

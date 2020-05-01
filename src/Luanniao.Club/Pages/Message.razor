@@ -5,7 +5,6 @@
 @using LuanNiao.Blazor.Component.Antd.Button
 
 
-<LNMessageStub @ref="asd"></LNMessageStub>
 
 
 <LNButton OnClickCallback="@Add">show normal message </LNButton>
@@ -27,8 +26,7 @@ private RenderFragment _content =@<LNButton Type="LNButton.BType.Dashed">I'm but
 
 
 
-
-    LNMessageStub asd;
+     
     [Inject]
     public LuanNiao.Blazor.Component.Antd.Message MyProperty { get; set; }
 
