@@ -44,7 +44,7 @@ LuanNiao Blazor 组件库是**基于**Antd V4版本的CSS样式库开发的ASP.N
       @("</Row>")
     ```
 1.  我们可能会要求您传递非常多的子组件.
-    
+    我们当然清楚您可以这么写代码来避免传递子组件:
     ```C#
         @("RenderFragment _filedName=@\"<X></X>\"")
     ```
