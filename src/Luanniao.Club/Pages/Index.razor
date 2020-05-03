@@ -2,7 +2,27 @@
 @page "/"
 @inject IJSRuntime _jsRT
 @using static LuanNiao.Blazor.Core.Translater
+    <div align="center">
+        <img src="https://resource.luanniao.club/commonres/icon.png">
 
+
+
+        <h3>LuanNiao Blazor Component-- ANTD</h3>
+        <h3>鸾鸟Blazor组件库--基于ANTDV4 风格</h3>
+        <span>A Blazor Component Library based on Ant V4 style</span>
+        <br />
+
+
+
+        <br />
+
+
+
+        <a href="https://gitter.im/luanniao-Blazor-Component-Antd/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge">
+            Gitter
+        </a>
+        <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=37aa7e890f0ead2e3cb5955691d64f12ef7f318748bd342ed574ec1e15a22c47"><img border="0" src="https://pub.idqqimg.com/wpa/images/group.png" alt="鸾鸟" title="鸾鸟"></a>
+    </div>
 <div id="test-editormd-view" style="@(_whichLang==0?"display:none;":null)">
     <textarea style="display:none;" name="test-editormd-markdown-doc">      
     
@@ -15,45 +35,25 @@ LuanNiao Blazor 组件库是**基于**Antd V4版本的CSS样式库开发的ASP.N
 ## 当前项目状态
 架构设计与前期框架搭建中,发布计划暂无,对于Blazor从落地到实际项目中而言,我们仍旧处于观察期,但这并不影响我们实现这个组件库,因为Blazor给予了我们无限大的想象空间.<br />
 
-
-
 另外,我们公司的实际使用中不仅需要这个UI组件库,更是需要一个Canvas组件的,目前您已经可以在Antd库中见到示例,但是确实如您所见那真的只是一个非常简单的实例,正常而言,我们会从Canvas2D开始制作我们需要的组件.
 
 ## 在您阅读一切之前,我希望能够在这里感谢一下给予我们帮助的人
 这些无私且伟大的人有:<br />
 
-
-
 [diwu0510](https://github.com/orgs/luanniao/people/diwu0510)<br />
-
-
 
 [lucio-c](https://github.com/orgs/luanniao/people/lucio-c)<br />
 
-
-
 [shenbo1](https://github.com/orgs/luanniao/people/shenbo1)<br />
-
-
 
 [talabright](https://github.com/orgs/luanniao/people/talabright) <br />
 
-
-
 我们目前并没有过多的贡献者,不过这并不会影响我们的积极性,我们会尽可能的完善这个库并伴随着我们公司的项目落地这个组件库.<br />
-
-
 
 如果您愿意浪费您宝贵的时间在我们这个不起眼的项目上,那么您的帮助将是我至高的荣幸.<br />
 
-
-
 好了,不打扰您了,接下来让我给您介绍一下我们的库吧!(•́⌄•́๑)૭✧
 <br />
-
-
-
-
 
 
 
@@ -82,11 +82,14 @@ LuanNiao Blazor 组件库是**基于**Antd V4版本的CSS样式库开发的ASP.N
       @("</Row>")
     ```
 1.  我们可能会要求您传递非常多的子组件.
-    这是因为,就目前而言,Blazor是无法做到在属性中传递对象的.当然,我们知道您可以编写如下类型的代码
+    我们当然清楚您可以这么写代码来避免传递子组件:
     ```C#
         @("RenderFragment _filedName=@\"<X></X>\"")
     ```
-    但是经过我们的实际测试,这样的组件您是无法做到完全使用所有组合可能的,例如您无法捕获***this***对象,以及会产生一些其他的奇奇怪怪的问题,具体您可以自行编写代码尝试一下,最核心的问题其实是无法捕获***this***对象.我们最开始也是这样编写的代码,但是后来放弃了,因为就目前的情况而言在实际的工作中您必然需要捕获***this***.
+    但是经过我们的测试与实际开发人员的规划,我们容许这么使用但并不期待我们自己的组件中充斥这样的写法,另外我们更加想契合一个期待:在C#端做95%以上的动作,而不是Razor页面,所以我们的API更期望您.使用类似于引用,使用简易的循环操作去实现页面的动作.而不是由我们封装.<br />
+
+    当然这完全可能是我们公司的坏习惯,我们公司的团队并不推荐使用第三方封装的各种自动获取,绑定与处理的函数.<br />
+
     所以,我们会出现类似下面样式的代码
     ```Html
         @("<LNCard CStyle=\"width:300px\" Actions=\"new[]{ a1,a2,a3}\">")
@@ -121,15 +124,49 @@ LuanNiao Blazor 组件库是**基于**Antd V4版本的CSS样式库开发的ASP.N
     1. 您当前看到的内容,或者说LuanNiao组件库的Doc是Markdown编写的,但是我们也付出了惨痛的代价,我们无法支持flow,因为当我们引入flow时,它的依赖组件与Blazor的JS引起了冲突,这使得我们不得不放弃Markdown的支持.
 
 ## 关于我们在开发组件库时遇到的问题
-未来我们会在其他地方建立专门的专区来分享这些内容,但截至目前(2020年4月24日)暂无具体计划.
+未来我们会在其他地方建立专门的专区来分享这些内容,但截至目前(2020年4月24日)暂无具体计划.:blush:
 >您可以关注本网站的更新来确定我们是否进行了此项更新
 
 <br />
+
 <br />
+
 <br />
+
 <br />
+
 <br />
+
 <br />
+
+
+
+# 非常感谢您阅读到这里
+感谢您对于当前库的阅读,我们为您为此浪费的几分钟表示感谢!您尽情在我们的文档库中玩转吧.
+
+#### 小请求
+如果出现BUG,我期望您能够在[GITHUB](https://github.com/luanniao/Blazor.Component.Antd)上给我们提出Issue,您的意见会给予我们极大的帮助! 
+
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+<br />
+
+
+
+
+
+
+
+
 
 
 
@@ -149,37 +186,68 @@ LuanNiao Blazor 组件库是**基于**Antd V4版本的CSS样式库开发的ASP.N
 <div id="test-editormd-view1" style="@(_whichLang==1?"display:none;":null)">
     <textarea style="display:none;" name="test-editormd-markdown-doc">      
     
->>Tips:this page use the google translate, if you found the **bug** you can push [PR](https://github.com/luanniao/luanniao.club/pulls) if you want.
+>>Tips:this page use the googlea translate, if you found the **bug** you can push [PR](https://github.com/luanniao/luanniao.club/pulls) if you want.
 
+ 
+Our library goal is to use the existing system to make a stable, high-availability Blazor component library.<br />
+
+
+
+We will not synchronize the official CSS and corresponding implementations like other implementations.<br />
+
+
+
+We are currently locked in antd v4.0.4.
+<Br />
+ 
 # LuanNiao Blazor Component Library
 LuanNiao Blazor component library is an ASP.NET Core Blazor component library developed ***based on*** the CSS style library of Antd V4 version.
 The goal of our library is to create a convenient and fast component library for small and medium-sized enterprises based on Antd's high reuse style and high compatibility.
 <p>
 If you are interested in this, you can take a few minutes to read our introduction to determine if you decide to use / follow the current component library.
 </p>
-
 ## Current project status
 In the architectural design and early framework construction, there is no release plan. For Blazor from the landing to the actual project, we are still in the observation period, but this does not affect our realization of this component library, because Blazor gives us infinite imagination Space. <br />
+
+
 
 In addition, the actual use of our company requires not only this UI component library, but also a Canvas component. At present, you can already see examples in the Antd library, but it is really just a very simple example as you can see. Normally, we will start with Canvas2D to make the components we need.
 
 ## I hope to be able to thank the people who helped us here
 These selfless and great people are:<br />
 
+
+
 [diwu0510](https://github.com/orgs/luanniao/people/diwu0510)<br />
+
+
 
 [lucio-c](https://github.com/orgs/luanniao/people/lucio-c)<br />
 
+
+
 [shenbo1](https://github.com/orgs/luanniao/people/shenbo1)<br />
+
+
 
 [talabright](https://github.com/orgs/luanniao/people/talabright) <br />
 
+
+
 We currently do not have too many contributors, but this will not affect our enthusiasm. We will improve this library as much as possible and accompany our company's project landing this component library. <br />
+
+
 
 If you are willing to waste your precious time on our humble project, your help will be my highest honor. <br />
 
+
+
 Well, don't disturb you, let me introduce you to our library!(•́⌄•́๑)૭✧
 <br />
+
+
+
+
 
 
 
@@ -201,22 +269,32 @@ The warehouse is maintained by a complete enterprise team and some friends who a
 You will find that our components are different from mainstream front-end frameworks such as react or vue in terms of use or design, for example:
 1.  Our component properties are all capitalized,
      This is because we are based on Blazor, so we think from the design that you need to accept the code style of C #, and the code style of C # has a constraint **Property must start with a capital letter**.<br />
-    You will see the following components:
 
+
+
+You will see the following components:
     ```Html
       @("<Row Gutter=\"new MarginGutter() { Vertial = 10, Horizontal = 4 }\">")
       @("</Row>")
     ```
 1.  We may ask you to pass very many subcomponents.<br />
 
-    This is because, for now, Blazor cannot pass objects in properties. Of course, we know that you can write the following types of code
 
+
+  We know that you can write the code like below to avoid pass subcomponents:
     ```C#
         @("RenderFragment _filedName=@\"<X></X>\"")
     ```
-    However, after our actual testing, you can't fully use all combinations of such components, for example, you can't capture ***this*** instance, and it will produce some other strange problems, specifically you can Try to write your own code, the core problem is that you ca n’t capture the ***this*** instance. We also wrote the code in the first place, but later gave up, because in the current situation you are in actual work. It is necessary to capture ***this***.<br />
+    
+    However, after our testing and actual developer planning, we allow this use, but we don't expect our own components to be filled with such writing. In addition, we want to meet one expectation: do more than 95% of the actions on the C # side instead of Razor page, so our API expects you more. Use similar to reference, use simple loop operation to realize the page action. Not encapsulated by us. <br />
 
-    So, we will have code similar to the following style
+
+
+     Of course, this may be a bad habit of our company. Our team does not recommend the use of various third-party encapsulated functions for automatic acquisition, binding and processing. <br />
+
+
+
+     So, we will have code similar to the following style
 
     ```Html
         @("<LNCard CStyle=\"width:300px\" Actions=\"new[]{ a1,a2,a3}\">")
@@ -244,7 +322,6 @@ You will find that our components are different from mainstream front-end framew
         @("     </Actions>")
         @("</LNCard>")
     ```
-
 1.  We currently have plans to make a status tree, but later ***canceled***, because we believe that there must be more powerful ** characters ** to achieve functions similar to ***Redux***, to At that time, we can take the ride by the way. After all, as strong as ANTD, this problem has not been considered. So we may not consider the ** state tree ** in the scope of functions in the near future.
 1. For now, we will not consider adding **Web Rich Text Editor for the time being** If you need this feature, you may need to wait for a while. After our team has searched the entire network, we have not Find a **web rich text editor** suitable for Blazor.The current implementation is basically biased towards two extremes, as far as Markdown is concerned:
     1. Completely use C # to achieve all the content, but it is impossible to exist unless the markdown function similar to the C library is implemented, but this depends on a large number of server renderings, which violates the basic intention of WASM, assuming that I use the C library , From the perspective of WASM security, at this time we do not guarantee that all the .DLL, .SO libraries we generate can be applied on various platforms, and we may not have the means to get the current operation under any circumstances System platform information.
@@ -256,11 +333,30 @@ In the future, we will establish special areas in other places to share these co
 > You can follow the update of this website to determine whether we have made this update
 
 <br />
+
+
+
 <br />
+
+
+
 <br />
+
+
+
 <br />
+
+
+
 <br />
+
+
+
 <br />
+
+
+
+
 
 
 
