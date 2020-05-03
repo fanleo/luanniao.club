@@ -70,12 +70,14 @@ You will see the following components:
       @("</Row>")
     ```
 1.  We may ask you to pass very many subcomponents.<br/>
-This is because, for now, Blazor cannot pass objects in properties. Of course, we know that you can write the following types of code
     ```C#
         @("RenderFragment _filedName=@\"<X></X>\"")
     ```
-    However, after our actual testing, you can't fully use all combinations of such components, for example, you can't capture ***this*** instance, and it will produce some other strange problems, specifically you can Try to write your own code, the core problem is that you ca n’t capture the ***this*** instance. We also wrote the code in the first place, but later gave up, because in the current situation you are in actual work. It is necessary to capture ***this***.<br/>
-So, we will have code similar to the following style
+    
+    However, after our testing and actual developer planning, we allow this use, but we don't expect our own components to be filled with such writing. In addition, we want to meet one expectation: do more than 95% of the actions on the C # side instead of Razor page, so our API expects you more. Use similar to reference, use simple loop operation to realize the page action. Not encapsulated by us. <br/>
+     Of course, this may be a bad habit of our company. Our team does not recommend the use of various third-party encapsulated functions for automatic acquisition, binding and processing. <br/>
+     So, we will have code similar to the following style
+
     ```Html
         @("<LNCard CStyle=\"width:300px\" Actions=\"new[]{ a1,a2,a3}\">")
         @("     <Title>")
