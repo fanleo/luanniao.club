@@ -70,6 +70,7 @@ You will see the following components:
       @("</Row>")
     ```
 1.  We may ask you to pass very many subcomponents.<br/>
+  We know that you can write the code like below to avoid pass subcomponents:
     ```C#
         @("RenderFragment _filedName=@\"<X></X>\"")
     ```
