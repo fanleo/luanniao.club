@@ -86,9 +86,10 @@ LuanNiao Blazor 组件库是**基于**Antd V4版本的CSS样式库开发的ASP.N
     ```C#
         @("RenderFragment _filedName=@\"<X></X>\"")
     ```
-    但是经过我们的测试与实际开发人员的规划,我们容许这么使用但并不期待我们自己的组件中充斥这样的写法,另外我们更加想契合一个期待:在C#端做95%以上的动作,而不是Razor页面,所以我们的API更期望您.使用类似于引用,使用简易的循环操作去实现页面的动作.而不是由我们封装.<br />
 
-    当然这完全可能是我们公司的坏习惯,我们公司的团队并不推荐使用第三方封装的各种自动获取,绑定与处理的函数.<br />
+    但是经过我们的测试与实际开发人员的规划,我们容许这么使用但并不期待**我们自己**的组件中充斥这样的写法.您当然可以在您的使用过程中这样编写,我们只是不在我们的组件中使用.<br />
+
+    当然这完全可能是我们公司的坏习惯.<br />
 
     所以,我们会出现类似下面样式的代码
     ```Html
@@ -273,55 +274,49 @@ You will find that our components are different from mainstream front-end framew
 
 
 You will see the following components:
-    ```Html
-      @("<Row Gutter=\"new MarginGutter() { Vertial = 10, Horizontal = 4 }\">")
-      @("</Row>")
-    ```
+```Html
+  @("<Row Gutter=\"new MarginGutter() { Vertial = 10, Horizontal = 4 }\">")
+  @("</Row>")
+```
 1.  We may ask you to pass very many subcomponents.<br />
 
 
 
   We know that you can write the code like below to avoid pass subcomponents:
-    ```C#
-        @("RenderFragment _filedName=@\"<X></X>\"")
-    ```
-    
-    However, after our testing and actual developer planning, we allow this use, but we don't expect our own components to be filled with such writing. In addition, we want to meet one expectation: do more than 95% of the actions on the C # side instead of Razor page, so our API expects you more. Use similar to reference, use simple loop operation to realize the page action. Not encapsulated by us. <br />
 
-
-
-     Of course, this may be a bad habit of our company. Our team does not recommend the use of various third-party encapsulated functions for automatic acquisition, binding and processing. <br />
-
-
-
+```C#
+    @("RenderFragment _filedName=@\"<X></X>\"")
+```    
+However, after our testing and actual developer planning, we allow this use, but we don't expect **our own** components to be filled with such writing.  <br />
+     Of course, this may be a bad habit of our company.  <br />
      So, we will have code similar to the following style
 
-    ```Html
-        @("<LNCard CStyle=\"width:300px\" Actions=\"new[]{ a1,a2,a3}\">")
-        @("     <Title>")
-        @("         Default size card")
-        @("     </Title>")
-        @("     <Extra>")
-        @("         <a href=\"#\">More</a>")
-        @("     </Extra>")
-        @("     <ChildContent>")
-        @("        <p>Card content</p>")
-        @("        <p>Card content</p>")
-        @("        <p>Card content</p>")
-        @("     </ChildContent>")
-        @("     <Actions>")
-        @("         <CardAction>")
-        @("             <LuanNiao.Blazor.Component.Antd.Button.LNButton OnClickCallback=\"@(async ( a)=>{ Console.WriteLine(\"asd\"); })\" />")
-        @("         </CardAction>")
-        @("         <CardAction>")
-        @("             <EditOutlined />")
-        @("         </CardAction>")
-        @("         <CardAction>")
-        @("             <EllipsisOutlined />")
-        @("         </CardAction>")
-        @("     </Actions>")
-        @("</LNCard>")
-    ```
+```Html
+    @("<LNCard CStyle=\"width:300px\" Actions=\"new[]{ a1,a2,a3}\">")
+    @("     <Title>")
+    @("         Default size card")
+    @("     </Title>")
+    @("     <Extra>")
+    @("         <a href=\"#\">More</a>")
+    @("     </Extra>")
+    @("     <ChildContent>")
+    @("        <p>Card content</p>")
+    @("        <p>Card content</p>")
+    @("        <p>Card content</p>")
+    @("     </ChildContent>")
+    @("     <Actions>")
+    @("         <CardAction>")
+    @("             <LuanNiao.Blazor.Component.Antd.Button.LNButton OnClickCallback=\"@(async ( a)=>{ Console.WriteLine(\"asd\"); })\" />")
+    @("         </CardAction>")
+    @("         <CardAction>")
+    @("             <EditOutlined />")
+    @("         </CardAction>")
+    @("         <CardAction>")
+    @("             <EllipsisOutlined />")
+    @("         </CardAction>")
+    @("     </Actions>")
+    @("</LNCard>")
+```
 1.  We currently have plans to make a status tree, but later ***canceled***, because we believe that there must be more powerful ** characters ** to achieve functions similar to ***Redux***, to At that time, we can take the ride by the way. After all, as strong as ANTD, this problem has not been considered. So we may not consider the ** state tree ** in the scope of functions in the near future.
 1. For now, we will not consider adding **Web Rich Text Editor for the time being** If you need this feature, you may need to wait for a while. After our team has searched the entire network, we have not Find a **web rich text editor** suitable for Blazor.The current implementation is basically biased towards two extremes, as far as Markdown is concerned:
     1. Completely use C # to achieve all the content, but it is impossible to exist unless the markdown function similar to the C library is implemented, but this depends on a large number of server renderings, which violates the basic intention of WASM, assuming that I use the C library , From the perspective of WASM security, at this time we do not guarantee that all the .DLL, .SO libraries we generate can be applied on various platforms, and we may not have the means to get the current operation under any circumstances System platform information.

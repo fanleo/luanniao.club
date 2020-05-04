@@ -1,0 +1,47 @@
+﻿@layout MainLayout
+@page "/pagination"
+
+@using LuanNiao.Blazor.Component.Antd.Pagination
+@using static LuanNiao.Blazor.Core.Translater
+
+@Tr(e => e == "en" ? "This one's current index" : "这个控件的当前下标是"):@_currentIndex1
+<Pagination DefaultCurrent="@_currentIndex1" Total="10" OnChange="Change1">
+
+</Pagination>
+
+
+
+@Tr(e => e == "en" ? "This one's current index" : "这个控件的当前下标是"):@_currentIndex2 SynchronizationIndex="true" @Tr(e => e == "en" ? "Use SynchronizationIndex" : "启用了同步下标功能")
+<Pagination DefaultCurrent="_currentIndex2" Total="10" SynchronizationIndex="true" OnChange="Change2">
+
+</Pagination>
+
+
+
+@code{
+
+    private int _currentIndex1 = 0;
+    private int _currentIndex2 = 1;
+    private void Change1(int index)
+    {
+        _currentIndex1 = index;
+        this.StateHasChanged();
+    }
+    private void Change2(int index)
+    {
+        _currentIndex2 = index;
+        this.StateHasChanged();
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        CultureChanged += (lang) =>
+        { 
+            InvokeAsync(() =>
+            {
+                this.StateHasChanged();
+            });
+        };
+    }
+}
