@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using LuanNiao.Blazor.Component.Antd;
 using LuanNiao.Blazor.Core;
 using Luanniao.Club.Properties;
+using TestPages;
 
 namespace Luanniao.Club
 {
